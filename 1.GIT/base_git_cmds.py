@@ -3,14 +3,12 @@ import argparse
 import shutil
 import subprocess
 import os
-# from pathlib import Path
 
 
 DIR_PATH = str(os.getcwd())
 
 def create(args):
     shutil.copy(args.src, args.dest)
-    # print(f'Hello world {args.schema}')
 
 def check_git_status(path_check):
     os.chdir(path_check)
@@ -67,8 +65,6 @@ create_branch_parser.set_defaults(func=create_branch)
 
 # -----------Добавление файлов в индекс и создание коммита-----------------
 create_commit_parser = subparsers.add_parser('create_commit', help='Create new branch & go into. Enter name of branch')
-# create_commit.add_argument(metavar='branch_name', dest='branch',
-#                           help='branch')
 create_commit_parser.add_argument('--message', '-m', dest='msg', default='new_commit',
                           help='Enter message.', )
 create_commit_parser.set_defaults(func=create_commit)
