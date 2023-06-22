@@ -1,0 +1,12 @@
+name: тестовое приложение github
+
+on: [push]
+
+jobs:
+  deploy:
+    name: тест
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: adfbaf
+        run: cat /etc/os-release
